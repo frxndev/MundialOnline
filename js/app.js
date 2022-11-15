@@ -4,9 +4,13 @@ const main = document.getElementById('app');
 const btn = document.getElementById('change');
 const channels = [
     {
-        name: 'directvSports',
+        name: 'dSports',
         url: 'https://dtvott-abc.akamaized.net/dash_live_1057/manifest.mpd?&ck=eyJhN2UwOWM2ZjQ3YWY1N2U5OTliNzg5ZWI1NGQzMjU1ZCIgOiAiMjYzZjZkYjEyZDZmOWFhNzJmMmNjOWIwZWYyZTI2YjIifQ=='
     },
+    // {
+    //     name: 'directvSports',
+    //     url: 'https://dtvott-abc.akamaized.net/dash_live_1057/manifest.mpd?&ck=eyJhN2UwOWM2ZjQ3YWY1N2U5OTliNzg5ZWI1NGQzMjU1ZCIgOiAiMjYzZjZkYjEyZDZmOWFhNzJmMmNjOWIwZWYyZTI2YjIifQ=='
+    // },
     {
         name: 'tycSports',
         url: 'https://1240-vos.dtvott.com/DASH/manifest.mpd?&ck=eyI0ZDQ1Yjc5ZDQ0ODczNDM1ODkwNThhYjQ5ZGRmOGNmMCI6ImFhN2Y5NWY3MWEzY2ZlNDBhYTU5OTA0ZjkyODVhZjcyIn0='
@@ -14,6 +18,10 @@ const channels = [
     {
         name: 'tvPublica',
         url: 'https://edge-live17-sl.cvattv.com.ar/live/c6eds/Canal7/SA_Live_dash_enc_2A/Canal7.mpd?&ck=eyJjYzhjODJhYzJlYzdlOTc5OTUyN2MyOWRiNzM1NGU4MSIgOiAiY2M0YWFlMTczZGQyZWYxN2FlMjZiZTNmN2FlODc2NjIifQ=='
+    },
+    {
+        name: 'deporTv',
+        url: 'https://dtvott-abc.akamaized.net/dash_live_1056/manifest.mpd?&ck=eyIwMGE3NzVkMWI5NmI1OTUxYjNjM2FiNTc5OWY5ODY4ZSIgOiAiM2E1NmRmMDA0N2RkNzA5Mzg4YzYwNmY5ZmYyZmJhZGQifQ=='
     },
 ]
 let count = 0;
@@ -27,7 +35,8 @@ const detectIndex = (hash) => {
 const changeChannel = (arr, i = 0) => location.hash = arr[i].name;
 
 const validHash = (hash) => {
-    if(hash === '#directvSports' || hash === '#tycSports' || hash === '#tvPublica'){
+    // saque esté canal del if hash === '#directvSports'
+    if( hash === '#tycSports' || hash === '#tvPublica' || hash === '#dSports' || hash === '#deporTv'){
         count = detectIndex(hash);
         let {url} = channels[count];
         return url;
