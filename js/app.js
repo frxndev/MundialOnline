@@ -23,6 +23,10 @@ const channels = [
         name: 'deporTv',
         url: 'https://dtvott-abc.akamaized.net/dash_live_1056/manifest.mpd?&ck=eyIwMGE3NzVkMWI5NmI1OTUxYjNjM2FiNTc5OWY5ODY4ZSIgOiAiM2E1NmRmMDA0N2RkNzA5Mzg4YzYwNmY5ZmYyZmJhZGQifQ=='
     },
+    {
+        name: 'azteca7',
+        url: 'https://live4-ott.izzigo.tv/out/u/dash/AZTECA-7-HD/default.mpd?&ck=eyJjZThmODZkMmYwZDE2Mzg1NzQyMzdhZGE4YWMyZTgyYSIgOiAiNjQyNzcyZWJmMTgzMmYxZjJmYTU4Y2I3ZThmY2ZkMDUifQ=='
+    },
 ]
 let count = 0;
 
@@ -36,7 +40,7 @@ const changeChannel = (arr, i = 0) => location.hash = arr[i].name;
 
 const validHash = (hash) => {
     // saque esté canal del if hash === '#directvSports'
-    if( hash === '#tycSports' || hash === '#tvPublica' || hash === '#dSports' || hash === '#deporTv'){
+    if( hash === '#tycSports' || hash === '#tvPublica' || hash === '#dSports' || hash === '#deporTv' || hash === '#azteca7'){
         count = detectIndex(hash);
         let {url} = channels[count];
         return url;
