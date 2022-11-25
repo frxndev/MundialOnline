@@ -32,6 +32,10 @@ button:active{
     transform: scale(.9);
 }
 
+.data-shaka-player-container{
+    width: 100vw !important;
+}
+
 .shaka-controls-button-panel{
     justify-content: space-between !important;
 }
@@ -46,15 +50,14 @@ button:active{
     padding: .8rem !important;
 }
 
-video, .shaka-controls-container{
-    border-radius: 10px;
-    overflow: hidden;
-}
-
 @media screen and (min-width: 900px){
     video{
         object-fit: contain !important;
         height: 90vh !important;
+    }
+    video, .shaka-controls-container{
+        border-radius: 10px;
+        overflow: hidden;
     }
 
 }
