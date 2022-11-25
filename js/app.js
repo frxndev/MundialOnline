@@ -47,7 +47,6 @@ const validHash = (hash) => {
 
 // add shaka-player ===========================================
 document.addEventListener('shaka-ui-loaded', async e => {
-    // channels = await getChannels()
     const channel = channels[count].name
     location.hash = channel
     addName(channel.toUpperCase())
@@ -62,7 +61,6 @@ document.addEventListener('shaka-ui-loaded', async e => {
 
 // detect hash in load DOM =========================================
 document.addEventListener('DOMContentLoaded', async e => {
-    // channels = await getChannels()
     let {hash} = location;
 
     let val = validHash(hash);
