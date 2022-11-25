@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundial 2022</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <!-- Shaka Player ui compiled library: -->
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.1.2/dist/shaka-player.ui.js"></script>
     <!-- Shaka Player ui compiled library default CSS: -->
@@ -14,14 +17,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <main id="app">
-        <div data-shaka-player-container style="max-width: 100%" data-shaka-player-cast-receiver-id="1BA79154">
 
+    <main id="app">
+        <div id="channel"></div>
+        <div id="message-channel"></div>
+        <div data-shaka-player-container style="max-width: 100%" data-shaka-player-cast-receiver-id="1BA79154" class="full-media">
             <video autoplay data-shaka-player id="video" style="width:100%;height:100%"></video>
-    
         </div>
-        <button id="change">cambiar canal</button>
+        <button id="next-channel">Sig. canal</button>
+        <button id="prev-channel">Ant. canal</button>
     </main>
 
 

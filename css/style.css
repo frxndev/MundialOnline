@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body{
@@ -57,4 +58,51 @@ button:active{
     video{
         height: 100vh !important;
     }
+}
+
+.full-media {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+}
+
+#channel {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+#next-channel {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#prev-channel {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 5px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#message-channel {
+    position: absolute;
+    z-index: 5;
+    margin: auto;
+    background-color: rgba(255, 0, 0, 0.3);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
 }

@@ -6,6 +6,9 @@ async function init(link) {
     // When using the UI, the player is made automatically by the UI object.
     const video = document.getElementById('video');
     const ui = video['ui'];
+    if (!ui) {
+        return;
+    }
     const controls = ui.getControls();
     const player = controls.getPlayer();
 
@@ -36,23 +39,31 @@ async function init(link) {
         await player.load(url);
         // This runs if the asynchronous load is successful.
         console.log('The video has now been loaded!');
+        const messageContainer = document.getElementById('message-channel');
+        messageContainer.innerHTML = '';
+        messageContainer.style.display = 'none';
+
     } catch (error) {
         onPlayerError(error);
     }
 }
-  
+
 function onPlayerErrorEvent(errorEvent) {
   onPlayerError(event.detail);
 }
 
 function onPlayerError(error) {
   console.error('Error code', error.code, 'object', error);
+  const messageContainer = document.getElementById('message-channel');
+    messageContainer.innerHTML = 'No se ha podido cargar el canal. Vaya al siguiente canal';
+    messageContainer.style.display = 'block';
+    messageContainer.style.backgroundColor = 'rgba(255,0,0,0.3)';
 }
 
 function onUIErrorEvent(errorEvent) {
   onPlayerError(event.detail);
 }
-  
+
 function initFailed(errorEvent) {
   console.error('Unable to load the UI library!');
 }
