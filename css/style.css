@@ -50,6 +50,10 @@ button:active{
     padding: .8rem !important;
 }
 
+video{
+    height: 100vh;
+}
+
 @media screen and (min-width: 900px){
     video{
         object-fit: contain !important;
