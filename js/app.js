@@ -1,3 +1,4 @@
+import { getChannels } from "./getChannels.js";
 import { init } from "./Player.js";
 
 const main = document.getElementById('app');
@@ -6,6 +7,9 @@ const btnPrev = document.getElementById('prev-channel');
 const channelName = document.getElementById('channel');
 const messageContainer = document.getElementById('message-channel');
 let count = 0;
+
+let channels;
+getChannels().then(data => channels = data);
 
 // functions =============================================
 const detectIndex = (hash) => {
@@ -43,6 +47,7 @@ const validHash = (hash) => {
 
 // add shaka-player ===========================================
 document.addEventListener('shaka-ui-loaded', async e => {
+    // channels = await getChannels()
     const channel = channels[count].name
     location.hash = channel
     addName(channel.toUpperCase())
@@ -56,7 +61,8 @@ document.addEventListener('shaka-ui-loaded', async e => {
 });
 
 // detect hash in load DOM =========================================
-document.addEventListener('DOMContentLoaded', e => {
+document.addEventListener('DOMContentLoaded', async e => {
+    // channels = await getChannels()
     let {hash} = location;
 
     let val = validHash(hash);
