@@ -98,23 +98,32 @@ window.addEventListener('hashchange', e => {
     init(url)
 });
 
+const nextChannel = () => {
+    count++;
+    if(count >= channels.length) count = 0;
+    changeChannel(channels, count);
+}
+
+const prevChannel = () => {
+    count--;
+    if(count < 0) count = channels.length - 1;
+    changeChannel(channels, count);
+}
+
 // change channel =================================================
 document.addEventListener('keydown', e => {
     if(e.key === 'ArrowRight'){
-        count++;
-        if(count >= channels.length) count = 0;
-        changeChannel(channels, count );
+        nextChannel();
+    }
+    if(e.key === 'ArrowLeft'){
+        prevChannel();
     }
 })
 
 btnNext.addEventListener('click', e => {
-    count++;
-    if(count >= channels.length) count = 0;
-    changeChannel(channels, count );
+    nextChannel();
 });
 
 btnPrev.addEventListener('click', e => {
-    count--;
-    if(count < 0) count = channels.length - 1;
-    changeChannel(channels, count );
+    prevChannel();
 });
