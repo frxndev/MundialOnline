@@ -46,6 +46,11 @@ button:active{
     padding: .8rem !important;
 }
 
+video, .shaka-controls-container{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 @media screen and (min-width: 900px){
     video{
         object-fit: contain !important;
@@ -60,40 +65,22 @@ button:active{
     }
 }
 
-.full-media {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: 1;
-}
-
 #channel {
     position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 0 0 5px 5px;
     color: #fff;
     z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     text-transform: uppercase;
 }
 
-#next-channel {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    border-radius: 0 0 0 5px;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-#prev-channel {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    border-radius: 0 0 5px 0;
-    background-color: rgba(0, 0, 0, 0.3);
+#next-channel, #prev-channel{
+    font-weight: bold;
 }
 
 #message-channel {
@@ -105,4 +92,12 @@ button:active{
     padding: 15px;
     border-radius: 5px;
     display: none;
+    font-weight: bold;
+}
+
+#controls{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
 }
